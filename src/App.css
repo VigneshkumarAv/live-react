@@ -1,0 +1,219 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+/* Carousel */
+
+
+/* popover */
+.popover-container {
+  position: relative;
+  display: inline-block;
+}
+.popover {
+  position: absolute;
+  left: 50%;
+  width: 200px;
+  min-height: 50px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 999;
+  background-color: white;
+}
+.popover-content {
+  font-size: 14px;
+  color: #333;
+}
+/* Star Rating */
+.star-container {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.star-rating{
+  font-size: 24px;
+  cursor: pointer;
+}
+.star{
+   color: gray;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.star.filled {
+  color: goldenrod;
+}
+.star.half-filled {
+  background: linear-gradient(90deg,goldenrod 50%, lightgray 50%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Nav bar */
+.navbar{
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.navbar-item {
+  margin-left: 20px;
+}
+.navbar-logo a{
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.navbar-item a{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+.navbar-item a:hover {
+  color: #f1c40f;
+}
+/* Calendar */
+/* General styles for the calendar */
+.calendar {
+  width: 300px;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.calendar-header {
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.calendar-header button {
+  background-color: #fff;
+  border: none;
+  font-size: 14px;
+  width: 70px;
+  cursor: pointer;
+  padding: 5px 3px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.calendar-header button:hover {
+  background-color: #f1f1f1;
+}
+
+.calendar-body {
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.weekdays span {
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+}
+
+.day {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.day:hover {
+  background-color: #e0e0e0;
+}
+
+.selected {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+/* Styling for the selected date */
+.selected-date {
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+  font-weight: bold;
+}
+/*  */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
