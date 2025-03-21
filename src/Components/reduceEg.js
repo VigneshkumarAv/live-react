@@ -55,7 +55,27 @@ const reduceEg = () => {
     "Microwave",
     "Laptop",
   ];
+  //method0
+  const handleArr0 = (arr) => {
+    return arr.reduce((acc, curr) => {
+      // If the item is already in the accumulator, increment its count; otherwise, set it to 1
+      acc[curr] = (acc[curr] || 0) + 1;
+      return acc;
+    }, {});
+  };
+  //method1
   const handleArr1 = (arr) => {
+    return arr.reduce((acc, curr) => {
+      if (acc[curr] > 0) {
+        acc[curr] = ++acc[curr];
+      } else {
+        acc[curr] = 1;
+      }
+      return acc;
+    }, {});
+  };
+  //method 2
+  const handleArr2 = (arr) => {
     return arr.reduce((acc, curr) => {
       acc = !acc[curr]
         ? { ...acc, [curr]: 1 }
