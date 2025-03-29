@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 const Popover = ({ contents, children }) => {
   const popOverRef = useRef(null);
-  const buttonRef = useRef(null);
+  /* const buttonRef = useRef(null); */
   const [isOpen, setIsOpen] = useState(false);
   const handlePopOver = () => {
     setIsOpen(!isOpen);
@@ -12,17 +12,17 @@ const Popover = ({ contents, children }) => {
   const handleEvent = (e) => {
     if (
       popOverRef.current &&
-      !popOverRef.current.contains(e.target) &&
+      !popOverRef.current.contains(e.target) /*  &&
       buttonRef.current &&
-      !buttonRef.current.contains(e.target)
+      !buttonRef.current.contains(e.target) */
     ) {
       setIsOpen(false);
     }
   };
   useEffect(() => {
-    document.addEventListener("click", handleEvent);
+    document.addEventListener("mousedown", handleEvent);
     return () => {
-      document.removeEventListener("click", handleEvent);
+      document.removeEventListener("mousedown", handleEvent);
     };
   }, []);
 
@@ -31,7 +31,7 @@ const Popover = ({ contents, children }) => {
       <button
         onClick={handlePopOver}
         className="popover-trigger"
-        ref={buttonRef}
+        /* ref={buttonRef} */
       >
         {children}
       </button>
