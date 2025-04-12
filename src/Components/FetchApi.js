@@ -31,12 +31,7 @@ const FetchApi = () => {
     };
     fetchData();
   }, [page]);
-  const updatedData = data.map((item) => (
-    <li key={item.id}>
-      <h1>{item.title}</h1>
-      <p>{item.body}</p>
-    </li>
-  ));
+
   const handlePage = (button) => {
     if (button === "Previous") {
       setPage((prev) => prev - 1);
@@ -44,6 +39,14 @@ const FetchApi = () => {
       setPage((prev) => prev + 1);
     }
   };
+
+  const updatedData = data.map((item) => (
+    <li key={item.id}>
+      <h1>{item.title}</h1>
+      <p>{item.body}</p>
+    </li>
+  ));
+
   return (
     <div>
       <label>

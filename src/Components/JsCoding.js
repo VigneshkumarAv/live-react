@@ -1,6 +1,33 @@
 import React from "react";
 
 const JsCoding = () => {
+  const clothes = ["jacket", "t-shirt"];
+  clothes.length = 0;
+
+  console.log(clothes[0], clothes); // undefined,[]
+
+  /* take all keys in obj starts */
+  const obj = {
+    name: "ram",
+    age: 25,
+    address: {
+      city: "mumbai",
+      pin: "123456",
+    },
+  };
+
+  const handleData = (objValue) => {
+    let tempObj = [];
+    for (const key in objValue) {
+      tempObj.push(key);
+      if (typeof obj[key] === "object")
+        tempObj = [...tempObj, ...handleData(obj[key])];
+    }
+    return tempObj;
+  };
+  console.log(handleData(obj));
+  /* take all keys in obj ends */
+
   /* Object with different values handling starts*/
   /* {data:[1,2,3]}
     {data:"string"}
