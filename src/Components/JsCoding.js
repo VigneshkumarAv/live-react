@@ -1,10 +1,65 @@
 import React from "react";
 
 const JsCoding = () => {
-  const clothes = ["jacket", "t-shirt"];
-  clothes.length = 0;
+  [1, 2, 33, 11, 22, 44].sort((a, b) => a - b); ///basic sorting que
 
-  console.log(clothes[0], clothes); // undefined,[]
+  /* print from 1 to 100 without using loop starts */
+  let i = 1;
+  const handleData = (i) => {
+    if (i > 100) return;
+    console.log(i);
+    handleData(i + 1);
+  };
+  handleData(i);
+  /* print from 1 to 100 without using loop ends */
+  /* recursion starts */
+  const handleFactorial = (num) => {
+    if (num <= 0) return;
+
+    handleFactorial(num - 1);
+    console.log(num * num - 1);
+  };
+  handleFactorial(5);
+
+  const handleRecursion = (str) => {
+    if (str.length <= 1) return str;
+    return handleRecursion(str.slice(1)) + str[0];
+  };
+  console.log(handleRecursion("hello"));
+
+  const obj1 = {
+    a: 1,
+    b: { c: 2, d: { e: 3 } },
+    f: 4,
+  };
+  const handleObj = (obj) => {
+    if (obj !== null && typeof obj !== "object") {
+      return obj;
+    }
+    let sum = 0;
+    for (const key in obj) {
+      sum = sum + handleObj(obj[key]);
+    }
+    return sum;
+  };
+  console.log(handleObj(obj1)); //10
+
+  const tree = {
+    id: 1,
+    children: [{ id: 2 }, { id: 3, children: [{ id: 4 }] }],
+  };
+  const handleTree = (tree, id) => {
+    if (tree.id === id) return tree;
+    if (tree.children) {
+      for (const child of tree.children) {
+        const result = handleTree(child, id);
+        if (result) return result;
+      }
+    }
+    return null;
+  };
+  console.log(handleTree(tree, 4)); //{id: 4}
+  /* recursion ends */
 
   /* take all keys in obj starts */
   const obj = {
