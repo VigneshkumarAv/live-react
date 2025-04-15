@@ -12,11 +12,11 @@ const Pagination = () => {
     { name: "butler", age: 35, id: 8 },
     { name: "salt", age: 33, id: 9 },
     { name: "dhoni", age: 42, id: 10 },
-    { name: "vignesh", age: 27, id: 1 },
-    { name: "rolex", age: 15, id: 2 },
-    { name: "head", age: 34, id: 3 },
-    { name: "virat", age: 35, id: 4 },
-    { name: "cummins", age: 37, id: 5 },
+    { name: "vignesh", age: 72, id: 11 },
+    { name: "rolex", age: 51, id: 12 },
+    { name: "head", age: 43, id: 13 },
+    { name: "virat", age: 5, id: 14 },
+    { name: "cummins", age: 3, id: 15 },
   ];
   const [currPage, setcurrPage] = useState(1);
   const perPage = 5;

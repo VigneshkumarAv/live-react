@@ -3,6 +3,52 @@ import React from "react";
 const JsCoding = () => {
   [1, 2, 33, 11, 22, 44].sort((a, b) => a - b); ///basic sorting que
 
+  /* ----- */
+  //to remove all falsy value from array
+  const arr1 = [false, null, 0, "", undefined, NaN, 1, 2, 3];
+
+  console.log(arr1.filter(Boolean));
+  /* ------ */
+  //count char
+  const str1 = "hello hello hello";
+
+  const handleStr = (str) => {
+    let charCount = {};
+    for (let char of str) {
+      if (char !== " ")
+        charCount[char] = charCount[char] ? charCount[char] + 1 : 1;
+    }
+    return charCount;
+  };
+  console.log(handleStr(str1));
+  /*------ */
+
+  console.log(Array.from(new Set([1, 1, 2, 3, 4, 5, 3, 4]))); //remove duplicates from array
+
+  const arr2 = [1, 3, 3, 2, 1];
+
+  const output1 = arr2.filter((item, index) => arr2.indexOf(item) === index); //remove duplicates from array
+  console.log(output1);
+  /* ------ */
+  const reverseString = (str) => {
+    let reverse = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+      reverse += str[i];
+    }
+    return reverse;
+  };
+  function findMinMax(arr) {
+    let min = Math.min(...arr);
+
+    let max = Math.max(...arr);
+
+    return [min, max];
+  }
+  let arr = [1, 5, 6, 9, 2, 8];
+  console.log(findMinMax(arr));
+  console.log(reverseString("Hello"));
+
+  /* ------ */
   /* print from 1 to 100 without using loop starts */
   let i = 1;
   const handleData = (i) => {

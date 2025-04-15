@@ -8,6 +8,8 @@ function SearchWithAutoSuggest() {
     "ram is in wonderland",
     "vignesh",
     "naga",
+    "all is well",
+    "b for ball",
   ]);
   const [value, setValue] = useState("");
   const handleValue = (e) => {
@@ -15,6 +17,7 @@ function SearchWithAutoSuggest() {
   };
 
   useEffect(() => {
+    //this will wait for user to stop typing as 3 sec delay added each time input entered settimeout will be resetted
     const handler = setTimeout(() => {
       if (value?.trim() === "") {
         setData([]);
@@ -24,7 +27,7 @@ function SearchWithAutoSuggest() {
         );
         setData(temp);
       }
-    }, 300);
+    }, 3000);
     return () => clearTimeout(handler);
   }, [value]);
   // Also we can add debounce here to imporve performance
