@@ -99,6 +99,20 @@ const JsCoding2 = () => {
   }, 500);
 
   /* ----- */
+  let obj2 = { name: "abc", age: "18", city: "pune", state: "maharashtra" };
+  // sort based on key
+  const handleObj = (obj) => {
+    let arr1 = Object.keys(obj).sort();
+
+    let obj1 = {};
+    for (const key of arr1) {
+      obj1[key] = obj[key];
+    }
+    console.log(obj1);
+  };
+
+  handleObj(obj2);
+  /* ------- */
   return <div></div>;
 };
 
