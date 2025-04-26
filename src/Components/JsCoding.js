@@ -152,6 +152,13 @@ const JsCoding = () => {
   handleData({ data: { value1: 1, value2: 2 } });
   /* Object with different values handling ends*/
 
+  /* Array DeepClone */
+  const a = [1, 2, 3, [4, 5, [6]]];
+  const copiedArr = (arr) => {
+    return arr.map((item) => {
+      return Array.isArray(item) ? copiedArr(item) : item;
+    });
+  };
   /* DeepClone Starts*/
   const clone = (obj) => {
     if (obj === null || typeof obj !== "object") {
