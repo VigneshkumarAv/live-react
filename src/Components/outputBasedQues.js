@@ -1,6 +1,14 @@
 import React from "react";
 
 const outputBasedQues = () => {
+  /* ----- */
+  (function () {
+    var a = (b = 5);
+  })();
+  console.log(a, b); // a output is not defined as it is local declaration, b is added to global object so it gives 5
+  /* b = 5;  // (global assignment)
+var a;  // (local declaration)
+a = b;  // (a gets value 5) */
   /* ---- */
   const clothes = ["jacket", "t-shirt"];
   clothes.length = 0;

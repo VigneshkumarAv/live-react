@@ -1,6 +1,14 @@
 import React from "react";
 
 const JsCoding2 = () => {
+  /* ------ */
+
+  const str = "This is the JS guide, Developer!";
+  //output => sihT si eht SJ ,ediug !repoleveD
+  const arr5 = str.split(" ");
+  const output1 = arr5.map((item) => item.split("").reverse().join(""));
+  console.log(output1.join(" "));
+
   /* ------ */ // version 1 using global variables
   const obj = { a: { b: { c: 1 } } };
   //output { 'a.b.c': 1 }

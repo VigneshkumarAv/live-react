@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
+
 /* Create a React web application that consumes the https://pokeapi.co/api/v2/pokemon/ API and displays a table containing a list of pokemon names and their abilities. The application should make multiple parallel API calls to fetch the pokemon details, including their abilities, and display them in the table. */
 const PokemonAPI = () => {
   const [pokemonData, setPokemonData] = useState([]);
@@ -9,20 +9,19 @@ const PokemonAPI = () => {
       const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
       const jsonData = await response.json();
       const pokemonData = jsonData.results;
-      const finalResult = await Promise.all(
-        pokemonData.map(async (pokemon) => {
-          const res = await fetch(pokemon.url);
-          const jsonData = await res.json();
-          const abilities = jsonData.abilities
-            .map((item) => item?.ability)
-            .map((inner) => inner.name)
-            .join(",");
-          return {
-            name: pokemon.name,
-            abilities: abilities,
-          };
-        })
-      );
+      const mappedData = pokemonData.map(async (pokemon) => {
+        const res = await fetch(pokemon.url);
+        const jsonData = await res.json();
+        const abilities = jsonData.abilities
+          .map((item) => item?.ability)
+          .map((inner) => inner.name)
+          .join(",");
+        return {
+          name: pokemon.name,
+          abilities: abilities,
+        };
+      });
+      const finalResult = await Promise.all(mappedData);
       setPokemonData(finalResult);
     } catch (err) {
       console.log(err);
