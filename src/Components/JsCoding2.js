@@ -1,6 +1,17 @@
 import React from "react";
 
 const JsCoding2 = () => {
+  /* ----- */ //Create closure for displaying count
+  function outer() {
+    let count = 0;
+    return function () {
+      count++;
+      return count;
+    };
+  }
+  const func = outer();
+
+  console.log(func(), func(), func()); //output=> 1,2,3
   /* ------ */
 
   const str = "This is the JS guide, Developer!";
